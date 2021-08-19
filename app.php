@@ -20,7 +20,7 @@ $guess = "1470"; // Tahmin edilen değer
  * Tahmin değeri ile karşılaştırmanızın sonucunda
  * "Tahmin değerinden düşük", "Tahmin değerinden büyük" veya
  * "Tahmin değerine eşit" şeklinde çıktı vermeniz gerekiyor.
- * 
+ 
  * Örneğin;
  * $gender = "female";
  * $weight = 60;
@@ -34,3 +34,29 @@ $guess = "1470"; // Tahmin edilen değer
  * 
  * yazması gerekiyor.
  */
+
+
+if ($gender == "male") {
+
+    $value = 88.362 + $weight * 13.397 + $height * 4.799 - 5.677 * $age;
+    echo  "BMR: " . $value . "\n";
+    writeResult($value, $guess);
+} else {
+
+    $value = 447.593 + $weight * 9.247 + $height * 3.098 - 4.330 * $age;
+    echo "BMR: " . $value . "\n";
+    writeResult($value, $guess);
+}
+
+
+function writeResult($value, $guess)
+{
+
+    if ($value > $guess) {
+        echo "Tahmin değerinden büyük";
+    } else if ($value < $guess) {
+        echo "Tahmin değerinden küçük";
+    } else {
+        echo  "Tahmin değerine eşit";
+    }
+}
